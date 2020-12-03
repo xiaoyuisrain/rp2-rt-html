@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Rating task</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <style>
+crowd-slider {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+  </style>
+</head>
+<body style="padding: 5px;">
+  <script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+  <!--
+  <script id="myScript" type="text/javascript" src="action_control.js"></script>
+  -->
+  <crowd-form answer-format="flatten-objects">
+    <crowd-instructions link-text="View instructions" link-type="button">
+      <short-summary>
+      </short-summary>
+      <detailed-instructions>
+      </detailed-instructions>
+      <positive-example>
+      </positive-example>
+      <negative-example>
+      </negative-example>
+    </crowd-instructions>
+
+    <strong>
+    <p>Please read the two pieces of text and use the sliders below to indicate how much you agree with the statements (-2 = strongly disagree, 2 = strongly agree).</p>
+    <p>Please <em>read the instructions</em> (by clicking 'View instructions') if this is your first time doing this rating task.</p>
+    </strong>
+
+      <p><strong>Original text: </strong>
+      <span>The Conservative manifesto contained a commitment.</span></p>
+      <p><strong>Candidate paraphrase: </strong>
+      <span>The Conservative manifesto consisted of a commitment.</span></p>
+  
+      <ul>
+        <li>
+          <span>The candidate paraphrase is an apt paraphrase of the original text.</span>
+          <crowd-slider name="aptPP" min="-2" max="2" step="1" pin></crowd-slider>
+          <span>Please provide a reason below if your rating is 0 (neither agree nor disagree):</span>
+          <crowd-text-area name="whyDKAptness" spellcheck="true" rows="1"></crowd-text-area>
+        </li>
+        <li>
+          <span>The original text uses literal language.</span>
+          <crowd-slider name="literalOriginal" min="-2" max="2" step="1" pin></crowd-slider>
+          <span>Please provide a reason below if your rating is 0 (neither agree nor disagree):</span>
+          <crowd-text-area name="whyDKLitnessOriginal" spellcheck="true" rows="1"></crowd-text-area>
+        </li>
+        <li>
+          <span>The candidate paraphrase uses literal language.</span>
+          <crowd-slider name="literalPP" min="-2" max="2" step="1" pin></crowd-slider>
+          <span>Please provide a reason below if your rating is 0 (neither agree nor disagree):</span>
+          <crowd-text-area name="whyDKLitnessPP" spellcheck="true" rows="1"></crowd-text-area>
+        </li>
+      </ul>
+  
+      <p><span>If you have any comments/feeback on this task, you can leave them below. This is optional, but your help will be appreciated.</span>
+      <crowd-text-area name="comments" rows="1"></crowd-text-area></p>
+
+      <!--
+      <crowd-button form-action="submit">
+        Submit
+      </crowd-button>
+      -->
+  </crowd-form>
+</body>
+</html>
