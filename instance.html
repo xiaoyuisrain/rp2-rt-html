@@ -4,6 +4,10 @@
   <title>Rating task</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <style>
+ol.quiz_choices {
+  list-style-type:lower-alpha;
+}
+
 #nonlit_egs li {
   padding-bottom: 15px;
 }
@@ -44,25 +48,8 @@ crowd-slider {
   <crowd-form answer-format="flatten-objects">
     <crowd-instructions link-text="View instructions" link-type="button">
       <short-summary>
-        <p>Please read our definition of apt paraphrases and literal language in the detailed instructions carefully and complete the quiz below before answering the rating questions.</p>
-        <p><strong>This HIT will be quality-controlled.</strong> Not completing the quiz will lead to exclusion from further HITs. A low score of the quiz will lead to direct rejection of your assignments. You only have to do this <em>once</em>.</p>
-        <h2>Quiz 1</h2>
-        <p>Select <em>all</em> of the statements below that are true according to our definition of aptness and literalness:
-        <ol>
-          <li><crowd-checkbox name="diff_quiz" value="if_apt_then_lit">An apt paraphrase is also a literal paraphrase.</crowd-checkbox></li>
-          <li><crowd-checkbox name="diff_quiz" value="if_lit_then_apt">A paraphrase that only uses literal language is also an apt paraphrase.</crowd-checkbox></li>
-          <li><crowd-checkbox name="diff_quiz" value="separate">Apt paraphrases do not necessarily use literal language.</crowd-checkbox></li>
-          <li><crowd-checkbox name="diff_quiz" value="if_nonlit_then_inapt">If a paraphrase uses non-literal language, it should be considered an inapt paraphrase.</crowd-checkbox></li>
-          <li><crowd-checkbox name="diff_quiz" value="intuitive_lit_rating">You are encouraged to use your intuition to rate the literalness of the given texts.</crowd-checkbox></li>
-        </ol>
-        </p>
-        <h2>Quiz 2</h2>
-        <p>Select <em>all</em> of the sentences below that only use literal language:<ol>
-            <li><crowd-checkbox name="lit_quiz" value="a1m_9">Software programmes for word processing, accounting and business planning are also essential.</crowd-checkbox></li>
-            <li><crowd-checkbox name="lit_quiz" value="a8m_70">A User's Guide is stupid, negative and insulting.</crowd-checkbox></li>
-            <li><crowd-checkbox name="lit_quiz" value="clw_42">For adolescents the acquisition of a clear ego-identity is the crucial task.</crowd-checkbox></li>
-            <li><crowd-checkbox name="lit_quiz" value="appear_2_1">One day a stranger appeared on my doorstep.</crowd-checkbox></li>
-            <li><crowd-checkbox name="lit_quiz" value="a7s_76">It wasn't the only programme last night to shine light into dirty corners.</crowd-checkbox></li></ol></p>
+        <p>Please follow our definition of apt paraphrases and literal language in the detailed instructions when answering the rating questions.</p>
+        <p><strong>This HIT will be quality-controlled.</strong> Please demonstrate your acknowledgement of the instructions by completing the quiz at the bottom of the detailed instructions tab. Not completing the quiz will exclude you from our further HITs; poor performance in the quiz will lead to rejection of your assignment(s). You only have to do this <em>once</em>.</p>
       </short-summary>
       <detailed-instructions>
         <h2>Apt paraphrases</h2>
@@ -70,7 +57,6 @@ crowd-slider {
 
         <h2>Literal language</h2>
         <p>A sentence uses literal language if it conveys meaning directly, describing an object or an event as it is, and using words that are typically associated with the object or event. Literal language constrasts with figurative language, which can take the form of metaphor, personification, simile, idiom, pun, hyperbole, etc.</p>
-        <p>Please consider the literalness and aptness of a paraphrase as separate criteria. A candidate paraphrase can fully capture the meaning of the original text and thus counts as an apt paraphrase, but does so via the use of non-literal language. Similarly, a paraphrase may use literal language entirely but fail to capture an important aspect of meaning of the original text.</p>
 
     <div class="eg">
       <p>Examples of literal sentences:</p>
@@ -81,11 +67,38 @@ crowd-slider {
       </ul>
       <p>Examples of non-literal sentences:</p>
       <ul id="nonlit_egs">
-        <li>And tell me, <span class="mrw">sweet</span> creature, do you <span class="mrw">count</span> as a <span class="mrw">toy</span>?<br /><span class="explain_met">This sentence addresses a person, describing the person as <q>sweet</q> and comparing the person to <q>a toy</q>. The basic meaning of <u>sweet</u> is to describe a sugary taste; its usage in this sentence thus compares the person to things that typically taste sweet, such as sugar. Similarly, as people are not toys, the comparison between the person and toys is non-literal. The usage of <u>count</u> is also non-literal, as it refers to an abstract thinking process of considering whether a person belongs to a particular category, whereas the word has a more concrete meaning of calculating the number of objects.</span></li>
+        <li>And tell me, <span class="mrw">sweet</span> creature, do you <span class="mrw">count</span> as a <span class="mrw">toy</span>?
+          <ul class="explain_met">
+            <li><u>Sweet</u> refers to a sugary taste. As it is unlikely that the person being referred to as <q>sweet creature</q> has a sugary taste, the usage is non-literal.</li>
+            <li>People are not toys, so the comparison between the person and toys is also non-literal.</li>
+            <li><u>Count</u> refers to an abstract thinking process in this sentence, of considering whether a person belongs to a particular category. As the word has a more concrete meaning of calculating the number of objects, its usage here is non-literal.</li>
+          </ul>
         <li>No longer can the Government <span class="mrw">disguise</span> the crisis <span class="mrw">surrounding</span> electricity privatisation.<br /><span class="explain_met">Both <u>disguise</u> and <u>surround</u> have a more concrete meaning than their meaning in this sentence.</span></li>
         <li>I wouldn't want her to have a <span class="mrw">rough</span> time.<br /><span class="explain_met"><u>Rough</u> refers to the texture of a surface, how the surface of something feels against your skin. Time apparently does not have a surface for us to touch; the usage is therefore non-literal.</span></li>
       </ul>
     </div>
+
+        <p>Please consider the literalness and aptness of a paraphrase as separate criteria. A candidate paraphrase can fully capture the meaning of the original text and thus counts as an apt paraphrase, but does so via the use of non-literal language. Similarly, a paraphrase may use literal language entirely but fail to capture an important aspect of meaning of the original text.</p>
+
+        <h2>Quiz</h2>
+        <p>1. Select <em>all</em> of the statements below that are true according to our definition of aptness and literalness:
+        <ol class="quiz_choices">
+          <li><crowd-checkbox name="diff_quiz" value="if_apt_then_lit">An apt paraphrase is also a literal paraphrase.</crowd-checkbox></li>
+          <li><crowd-checkbox name="diff_quiz" value="if_lit_then_apt">A paraphrase that only uses literal language is also an apt paraphrase.</crowd-checkbox></li>
+          <li><crowd-checkbox name="diff_quiz" value="separate">Apt paraphrases do not necessarily use literal language.</crowd-checkbox></li>
+          <li><crowd-checkbox name="diff_quiz" value="if_nonlit_then_inapt">If a paraphrase uses non-literal language, it should be considered an inapt paraphrase.</crowd-checkbox></li>
+          <li><crowd-checkbox name="diff_quiz" value="intuitive_lit_rating">You are encouraged to use your intuition to rate the literalness of the given texts.</crowd-checkbox></li>
+        </ol>
+        </p>
+        <p>2. Select <em>all</em> of the sentences below that only use literal language:
+        <ol class="quiz_choices">
+            <li><crowd-checkbox name="lit_quiz" value="a1m_9">Software programmes for word processing, accounting and business planning are also essential.</crowd-checkbox></li>
+            <li><crowd-checkbox name="lit_quiz" value="a8m_70">A User's Guide is stupid, negative and insulting.</crowd-checkbox></li>
+            <li><crowd-checkbox name="lit_quiz" value="clw_42">For adolescents the acquisition of a clear ego-identity is the crucial task.</crowd-checkbox></li>
+            <li><crowd-checkbox name="lit_quiz" value="appear_2_1">One day a stranger appeared on my doorstep.</crowd-checkbox></li>
+            <li><crowd-checkbox name="lit_quiz" value="a7s_76">It wasn't the only programme last night to shine light into dirty corners.</crowd-checkbox></li>
+        </ol>
+        </p>
       </detailed-instructions>
       <positive-example>
       </positive-example>
@@ -94,7 +107,7 @@ crowd-slider {
     </crowd-instructions>
 
     <strong>
-    <p>Please read the instructions (by clicking 'View instructions') if this is your first time doing this task.</p>
+    <p>Please read the instructions (by clicking 'View instructions') if this is your first time doing this HIT.</p>
     <p>Please read the two pieces of text and use the sliders below to indicate how much you agree with the statements (-2 = strongly disagree, 2 = strongly agree).</p>
     </strong>
 
