@@ -28,38 +28,42 @@ crowd-slider {
     </crowd-instructions>
 
     <strong>
+    <p>Please read the instructions (by clicking 'View instructions') if this is your first time doing this task.</p>
     <p>Please read the two pieces of text and use the sliders below to indicate how much you agree with the statements (-2 = strongly disagree, 2 = strongly agree).</p>
-    <p>Please <em>read the instructions</em> (by clicking 'View instructions') if this is your first time doing this rating task.</p>
     </strong>
 
+    <div id="stimulus">
       <p><strong>Original text: </strong>
       <span>The Conservative manifesto contained a commitment.</span></p>
       <p><strong>Candidate paraphrase: </strong>
       <span>The Conservative manifesto consisted of a commitment.</span></p>
+    </div>
   
-      <ul>
+    <div id="questions">
+      <ol id="ratings">
         <li>
-          <span>The candidate paraphrase is an apt paraphrase of the original text.</span>
-          <crowd-slider name="aptPP" min="-2" max="2" step="1" pin></crowd-slider>
+          <span>The candidate paraphrase is an <em>apt</em> paraphrase of the original text.</span>
+          <crowd-slider name="apt_pp" min="-2" max="2" step="1" pin></crowd-slider>
           <span>Please provide a reason below if your rating is 0 (neither agree nor disagree):</span>
-          <crowd-text-area name="whyDKAptness" spellcheck="true" rows="1"></crowd-text-area>
+          <crowd-text-area name="why_0_apt" spellcheck="true" rows="1"></crowd-text-area>
         </li>
         <li>
-          <span>The original text uses literal language.</span>
-          <crowd-slider name="literalOriginal" min="-2" max="2" step="1" pin></crowd-slider>
+          <span><em>The original text</em> uses literal language.</span>
+          <crowd-slider name="lit_original" min="-2" max="2" step="1" pin></crowd-slider>
           <span>Please provide a reason below if your rating is 0 (neither agree nor disagree):</span>
-          <crowd-text-area name="whyDKLitnessOriginal" spellcheck="true" rows="1"></crowd-text-area>
+          <crowd-text-area name="why_0_lit_original" spellcheck="true" rows="1"></crowd-text-area>
         </li>
         <li>
-          <span>The candidate paraphrase uses literal language.</span>
-          <crowd-slider name="literalPP" min="-2" max="2" step="1" pin></crowd-slider>
+          <span><em>The candidate paraphrase</em> uses literal language.</span>
+          <crowd-slider name="lit_pp" min="-2" max="2" step="1" pin></crowd-slider>
           <span>Please provide a reason below if your rating is 0 (neither agree nor disagree):</span>
-          <crowd-text-area name="whyDKLitnessPP" spellcheck="true" rows="1"></crowd-text-area>
+          <crowd-text-area name="why_0_lit_pp" spellcheck="true" rows="1"></crowd-text-area>
         </li>
-      </ul>
+      </ol>
   
-      <p><span>If you have any comments/feeback on this task, you can leave them below. This is optional, but your help will be appreciated.</span>
+      <p><span>If you have any comments on this task, you can leave them below. This is optional, but your help will be appreciated.</span>
       <crowd-text-area name="comments" rows="1"></crowd-text-area></p>
+    </div>
 
       <!--
       <crowd-button form-action="submit">
