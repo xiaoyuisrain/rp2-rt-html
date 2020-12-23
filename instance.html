@@ -113,9 +113,9 @@ crowd-slider {
 
     <div id="stimulus">
       <p><strong>Original text: </strong>
-      <span>The Conservative manifesto contained a commitment.</span></p>
+      <span id="ref">The Conservative manifesto contained a commitment.</span></p>
       <p><strong>Candidate paraphrase: </strong>
-      <span>The Conservative manifesto consisted of a commitment.</span></p>
+      <span id="pp">The Conservative manifesto consisted of a commitment.</span></p>
     </div>
   
     <div id="questions">
@@ -128,9 +128,9 @@ crowd-slider {
         </li>
         <li>
           <span><em>The original text</em> uses literal language.</span>
-          <crowd-slider name="lit_original" min="-2" max="2" step="1" pin></crowd-slider>
+          <crowd-slider name="lit_ref" min="-2" max="2" step="1" pin></crowd-slider>
           <span>Please provide a reason below if your rating is 0 (neither agree nor disagree):</span>
-          <crowd-text-area name="why_0_lit_original" spellcheck="true" rows="1"></crowd-text-area>
+          <crowd-text-area name="why_0_lit_ref" spellcheck="true" rows="1"></crowd-text-area>
         </li>
         <li>
           <span><em>The candidate paraphrase</em> uses literal language.</span>
