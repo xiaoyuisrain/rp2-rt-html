@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Rating task instructions</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <style>
+ol.quiz_choices {
+  list-style-type:lower-alpha;
+}
+
+#nonlit_egs li {
+  padding-bottom: 15px;
+}
+
+.explain_met {
+  font-style: italic;
+}
+
+.mrw {
+  color: red;
+}
+
+crowd-slider {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#stimulus {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#questions {
+  padding-bottom: 5px;
+}
+
+#ratings li {
+  padding-bottom: 30px;
+
+}
+  </style>
+</head>
+<body style="padding-left: 25%; padding-right: 25%">
+  <h1>Full instructions for our rating task</h1>
+  <p>In this task, you are presented with a short text and a candidate paraphrase. Your task is to evaluate the aptness and the literalness of the paraphrase. Your evaluation should be based on our definition of apt paraphrases and literal language provided below.</p>
+        <h2>Apt paraphrases</h2>
+        <p>A candidate paraphrase is an apt paraphrase of the original text if the message it conveys is the same or similar to the original text. Please use your intuition to answer the question about the aptness of the candidate paraphrase; there are no right or wrong answers. However, we may ask you to explain your rating if it deviates greatly from the majority.</p>
+
+        <h2>Literal language</h2>
+        <p>A sentence uses literal language if it conveys meaning directly, describing an object or an event as it is, and using words that are typically associated with the object or event. Literal language constrasts with figurative language, which can take the form of metaphor, personification, simile, idiom, pun, hyperbole, etc.</p>
+
+    <div class="eg">
+      <p>Examples of literal sentences:</p>
+      <ul>
+        <li>I have to go to my country to see my father.</li>
+        <li>Turnbull busies himself with his clipboard as his reply is translated.</li>
+        <li>The diagrams are updated periodically during the course of the simulation.</li>
+      </ul>
+      <p>Examples of non-literal sentences:</p>
+      <ul id="nonlit_egs">
+        <li>And tell me, <span class="mrw">sweet</span> creature, do you <span class="mrw">count</span> as a <span class="mrw">toy</span>?
+          <ul class="explain_met">
+            <li><u>Sweet</u> refers to a sugary taste. As it is unlikely that the person being referred to as <q>sweet creature</q> has a sugary taste, the usage is non-literal.</li>
+            <li>People are not toys, so the comparison between the person and toys is also non-literal.</li>
+            <li><u>Count</u> refers to an abstract thinking process in this sentence, of considering whether a person belongs to a particular category. As the word has a more concrete meaning of calculating the number of objects, its usage here is non-literal.</li>
+          </ul>
+        <li>No longer can the Government <span class="mrw">disguise</span> the crisis <span class="mrw">surrounding</span> electricity privatisation.<br /><span class="explain_met">Both <u>disguise</u> and <u>surround</u> have a more concrete meaning than their meaning in this sentence.</span></li>
+        <li>I wouldn't want her to have a <span class="mrw">rough</span> time.<br /><span class="explain_met"><u>Rough</u> refers to the texture of a surface, how the surface of something feels against your skin. Time apparently does not have a surface for us to touch; the usage is therefore non-literal.</span></li>
+      </ul>
+    </div>
+
+    <p>Please consider the literalness and aptness of a paraphrase as <strong>separate criteria</strong>. A paraphrase may fully capture the meaning of the original text and thus count as an apt paraphrase, but do so via the use of non-literal language. Such a paraphrase would be <strong>apt but non-literal</strong>. Similarly, a paraphrase may use literal language entirely but fail to capture an important aspect of meaning of the original text. Such a paraphrase would be <strong>literal but inapt</strong>. Please keep the difference between literalness and aptness in mind when completing the HIT.</p>
+
+        <h2>Quiz</h2>
+        <p>1. Select <em>all</em> of the statements below that are true according to our definition of aptness and literalness:
+        <ol class="quiz_choices">
+          <li><crowd-checkbox name="diff_quiz" value="if_apt_then_lit">An apt paraphrase is also a literal paraphrase.</crowd-checkbox></li>
+          <li><crowd-checkbox name="diff_quiz" value="if_lit_then_apt">A paraphrase that only uses literal language is also an apt paraphrase.</crowd-checkbox></li>
+          <li><crowd-checkbox name="diff_quiz" value="separate">Apt paraphrases do not necessarily use literal language.</crowd-checkbox></li>
+          <li><crowd-checkbox name="diff_quiz" value="if_nonlit_then_inapt">If a paraphrase uses non-literal language, it should be considered an inapt paraphrase.</crowd-checkbox></li>
+          <li><crowd-checkbox name="diff_quiz" value="intuitive_lit_rating">You are encouraged to use your intuition to rate the literalness of the given texts.</crowd-checkbox></li>
+        </ol>
+        </p>
+        <p>2. Select <em>all</em> of the sentences below that only use literal language:
+        <ol class="quiz_choices">
+            <li><crowd-checkbox name="lit_quiz" value="a1m_9">Software programmes for word processing, accounting and business planning are also essential.</crowd-checkbox></li>
+            <li><crowd-checkbox name="lit_quiz" value="a8m_70">A User's Guide is stupid, negative and insulting.</crowd-checkbox></li>
+            <li><crowd-checkbox name="lit_quiz" value="clw_42">For adolescents the acquisition of a clear ego-identity is the crucial task.</crowd-checkbox></li>
+            <li><crowd-checkbox name="lit_quiz" value="appear_2_1">One day a stranger appeared on my doorstep.</crowd-checkbox></li>
+            <li><crowd-checkbox name="lit_quiz" value="a7s_76">It wasn't the only programme last night to shine light into dirty corners.</crowd-checkbox></li>
+        </ol>
+        </p>
+</body>
+</html>
