@@ -48,11 +48,14 @@ crowd-slider {
   <crowd-form answer-format="flatten-objects">
     <crowd-instructions link-text="View instructions" link-type="button">
       <short-summary>
-        <p>Please follow our definition of apt paraphrases and literal language in the detailed instructions when answering the rating questions.</p>
+        <ul>
+          <li>Use your intuition to decide whether the given texts have the same meaning.</li>
+          <li>Use our definition of literal language (in the detailed instructions) to evaluate the literalness of the given texts.</li>
+        </ul>
       </short-summary>
       <detailed-instructions>
-        <h2>Apt paraphrases</h2>
-        <p>A candidate paraphrase is an apt paraphrase of the original text if the message it conveys is the same or similar to the original text. Please use your intuition to answer the question about the aptness of the candidate paraphrase; there are no right or wrong answers. However, we may ask you to explain your rating if it deviates greatly from the majority.</p>
+        <h2>Same meaning</h2>
+        <p>Please use your intuition to decide whether the given texts have the same meaning; there are no right or wrong answers. However, we may ask you to explain your rating if it deviates greatly from the majority.</p>
 
         <h2>Literal language</h2>
         <p>A sentence uses literal language if it conveys meaning directly, describing an object or an event as it is, and using words that are typically associated with the object or event. Literal language constrasts with figurative language, which can take the form of metaphor, personification, simile, idiom, pun, hyperbole, etc.</p>
@@ -76,9 +79,6 @@ crowd-slider {
         <li>I wouldn't want her to have a <span class="mrw">rough</span> time.<br /><span class="explain_met"><u>Rough</u> refers to the texture of a surface, how the surface of something feels against your skin. Time apparently does not have a surface for us to touch; the usage is therefore non-literal.</span></li>
       </ul>
     </div>
-
-    <p>Please consider the literalness and aptness of a paraphrase as <strong>separate criteria</strong>. A paraphrase may fully capture the meaning of the original text and thus count as an apt paraphrase, but do so via the use of non-literal language. Such a paraphrase would be <strong>apt but non-literal</strong>. Similarly, a paraphrase may use literal language entirely but fail to capture an important aspect of meaning of the original text. Such a paraphrase would be <strong>literal but inapt</strong>. Please keep the difference between literalness and aptness in mind when completing the HIT.</p>
-
       </detailed-instructions>
       <positive-example>
       </positive-example>
@@ -88,34 +88,35 @@ crowd-slider {
 
     <strong>
     <p>Please read the two pieces of text and use the sliders below to indicate how much you agree with the statements (-2 = strongly disagree, 2 = strongly agree).</p>
+    <p>Your literalness ratings should agree with our definition of literal language.</p>
     </strong>
 
     <div id="stimulus">
-      <p><strong>Original text: </strong>
-      <span id="ref">The Conservative manifesto contained a commitment.</span></p>
-      <p><strong>Candidate paraphrase: </strong>
-      <span id="pp">The Conservative manifesto consisted of a commitment.</span></p>
+      <p><strong>Text 1:</strong>
+      <span id="text1">The Conservative manifesto contained a commitment.</span></p>
+      <p><strong>Text 2:</strong>
+      <span id="text2">The Conservative manifesto consisted of a commitment.</span></p>
     </div>
   
     <div id="questions">
       <ol id="ratings">
         <li>
-          <span>The candidate paraphrase is an <em>apt</em> paraphrase of the original text.</span>
-          <crowd-slider name="apt_pp" min="-2" max="2" step="1" pin></crowd-slider>
-          <span>Please provide a reason below if your rating is 0 (neither agree nor disagree):</span>
-          <crowd-text-area name="why_0_apt" spellcheck="true" rows="1"></crowd-text-area>
+          <span>Text 1 and text 2 have the same meaning.</span>
+          <crowd-slider name="same" min="-2" max="2" step="1" pin></crowd-slider>
+          <span>Please explain briefly if you give a rating of 0 (neither agree nor disagree):</span>
+          <crowd-text-area name="why_0_same" spellcheck="true" rows="1"></crowd-text-area>
         </li>
         <li>
-          <span><em>The original text</em> uses literal language.</span>
-          <crowd-slider name="lit_ref" min="-2" max="2" step="1" pin></crowd-slider>
-          <span>Please provide a reason below if your rating is 0 (neither agree nor disagree):</span>
-          <crowd-text-area name="why_0_lit_ref" spellcheck="true" rows="1"></crowd-text-area>
+          <span>Text 1 uses literal language.</span>
+          <crowd-slider name="lit_text1" min="-2" max="2" step="1" pin></crowd-slider>
+          <span>Please explain briefly if you give a rating of 0 (neither agree nor disagree):</span>
+          <crowd-text-area name="why_0_lit_text1" spellcheck="true" rows="1"></crowd-text-area>
         </li>
         <li>
-          <span><em>The candidate paraphrase</em> uses literal language.</span>
-          <crowd-slider name="lit_pp" min="-2" max="2" step="1" pin></crowd-slider>
-          <span>Please provide a reason below if your rating is 0 (neither agree nor disagree):</span>
-          <crowd-text-area name="why_0_lit_pp" spellcheck="true" rows="1"></crowd-text-area>
+          <span>Text 2 uses literal language.</span>
+          <crowd-slider name="lit_text2" min="-2" max="2" step="1" pin></crowd-slider>
+          <span>Please explain briefly if you give a rating of 0 (neither agree nor disagree):</span>
+          <crowd-text-area name="why_0_lit_text2" spellcheck="true" rows="1"></crowd-text-area>
         </li>
       </ol>
   
