@@ -4,6 +4,10 @@
   <title>Rating task</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <style>
+.ans {
+  color: blue;
+}
+
 ol.quiz_choices {
   list-style-type:lower-alpha;
 }
@@ -42,9 +46,6 @@ crowd-slider {
 </head>
 <body style="padding: 5px;">
   <script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
-  <!--
-  <script id="myScript" type="text/javascript" src="action_control.js"></script>
-  -->
   <crowd-form answer-format="flatten-objects">
     <crowd-instructions link-text="View instructions" link-type="button">
       <short-summary>
@@ -98,26 +99,32 @@ crowd-slider {
       <p><strong>Text 2:</strong>
       <span id="text2">The Conservative manifesto consisted of a commitment.</span></p>
     </div>
-  
+
     <div id="questions">
       <ol id="ratings">
         <li>
-          <span>Text 1 and text 2 have the same meaning.</span>
-          <crowd-slider name="same" min="-2" max="2" step="1" pin></crowd-slider>
-          <span>Please explain briefly if you give a rating of 0 (neither agree nor disagree):</span>
-          <crowd-text-area name="why_0_same" spellcheck="true" rows="1"></crowd-text-area>
+          <p>Text 1 and text 2 have the same meaning.</p>
+          <p>-2 <input type="range" id="same" name="same"
+            min="-2" max="2" step="1" onchange="show_answer(this.id);" /> 2</p>
+          <p class="ans" id="ans_same"></p>
+          <p>Please explain briefly if you give a rating of 0 (neither agree nor disagree):
+          <crowd-text-area name="why_0_same" spellcheck="true" rows="1"></crowd-text-area></p>
         </li>
         <li>
-          <span>Text 1 uses literal language.</span>
-          <crowd-slider name="lit_text1" min="-2" max="2" step="1" pin></crowd-slider>
-          <span>Please explain briefly if you give a rating of 0 (neither agree nor disagree):</span>
-          <crowd-text-area name="why_0_lit_text1" spellcheck="true" rows="1"></crowd-text-area>
+          <p>Text 1 uses literal language.</p>
+          <p>-2 <input type="range" id="lit_text1" name="lit_text1"
+            min="-2" max="2" step="1" onchange="show_answer(this.id);" /> 2</p>
+          <p class="ans" id="ans_lit_text1"></p>
+          <p>Please explain briefly if you give a rating of 0 (neither agree nor disagree):
+          <crowd-text-area name="why_0_lit_text1" spellcheck="true" rows="1"></crowd-text-area></p>
         </li>
         <li>
-          <span>Text 2 uses literal language.</span>
-          <crowd-slider name="lit_text2" min="-2" max="2" step="1" pin></crowd-slider>
-          <span>Please explain briefly if you give a rating of 0 (neither agree nor disagree):</span>
-          <crowd-text-area name="why_0_lit_text2" spellcheck="true" rows="1"></crowd-text-area>
+          <p>Text 2 uses literal language.</p>
+          <p>-2 <input type="range" id="lit_text2" name="lit_text2"
+            min="-2" max="2" step="1" onchange="show_answer(this.id);" /> 2</p>
+          <p class="ans" id="ans_lit_text2"></p>
+          <p>Please explain briefly if you give a rating of 0 (neither agree nor disagree):
+        <crowd-text-area name="why_0_lit_text2" spellcheck="true" rows="1"></crowd-text-area></p>
         </li>
       </ol>
   
@@ -131,5 +138,7 @@ crowd-slider {
       </crowd-button>
       -->
   </crowd-form>
+  <script id="myScript" type="text/javascript" src="action_control.js"></script>
+  
 </body>
 </html>
