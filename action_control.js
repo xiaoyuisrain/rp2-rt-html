@@ -1,5 +1,5 @@
 
-function f(rating) {
+function prep_msg(rating) {
   switch (rating) {
     case "-2":
       msg = "strongly disagree";
@@ -22,25 +22,19 @@ function f(rating) {
   return msg;
 }
 
-/*
-var x = "lit_text1";
-var slider = document.getElementById(x);
-var output = document.getElementById("ans_" + x);
-output.innerHTML = f(slider.value);
-
-slider.addEventListener("change", function() {
-  output.innerHTML = f(slider.value);
-}, false);
-*/
-
 function show_answer(x) {
   var slider = document.getElementById(x);
   var output = document.getElementById("ans_" + x);
-  output.innerHTML = f(slider.value);
+  output.innerHTML = prep_msg(slider.value);
 }
 
 var displayed_answers = document.getElementsByClassName("ans");
 for (item of displayed_answers) {
-  item.innerHTML = f("0");
+  item.innerHTML = prep_msg("0");
 }
+
+var why_prompts = document.getElementsByClassName("prompt_explain_0");
+for (item of why_prompts) {
+  item.innerHTML = "Please explain briefly if you give a rating of 0 (neither agree nor disagree):";
+} 
 

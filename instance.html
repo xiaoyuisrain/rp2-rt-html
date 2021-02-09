@@ -107,24 +107,30 @@ crowd-slider {
           <p>-2 <input type="range" id="same" name="same"
             min="-2" max="2" step="1" onchange="show_answer(this.id);" /> 2</p>
           <p class="ans" id="ans_same"></p>
-          <p>Please explain briefly if you give a rating of 0 (neither agree nor disagree):
-          <crowd-text-area name="why_0_same" spellcheck="true" rows="1"></crowd-text-area></p>
+          <p>
+            <span class="prompt_explain_0"></span>
+            <crowd-text-area name="why_0_same" spellcheck="true" rows="1"></crowd-text-area>
+          </p>
         </li>
         <li>
           <p>Text 1 uses literal language.</p>
           <p>-2 <input type="range" id="lit_text1" name="lit_text1"
             min="-2" max="2" step="1" onchange="show_answer(this.id);" /> 2</p>
           <p class="ans" id="ans_lit_text1"></p>
-          <p>Please explain briefly if you give a rating of 0 (neither agree nor disagree):
-          <crowd-text-area name="why_0_lit_text1" spellcheck="true" rows="1"></crowd-text-area></p>
+          <p>
+            <span class="prompt_explain_0"></span>
+            <crowd-text-area name="why_0_lit_text1" spellcheck="true" rows="1"></crowd-text-area>
+          </p>
         </li>
         <li>
           <p>Text 2 uses literal language.</p>
           <p>-2 <input type="range" id="lit_text2" name="lit_text2"
             min="-2" max="2" step="1" onchange="show_answer(this.id);" /> 2</p>
           <p class="ans" id="ans_lit_text2"></p>
-          <p>Please explain briefly if you give a rating of 0 (neither agree nor disagree):
-        <crowd-text-area name="why_0_lit_text2" spellcheck="true" rows="1"></crowd-text-area></p>
+          <p>
+            <span class="prompt_explain_0"></span>
+            <crowd-text-area name="why_0_lit_text2" spellcheck="true" rows="1"></crowd-text-area>
+          </p>
         </li>
       </ol>
   
